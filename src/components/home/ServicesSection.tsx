@@ -1,10 +1,8 @@
 import React from 'react';
 import { 
   Building2, 
-  Trees, 
   Utensils, 
   HeartHandshake, 
-  Users, 
   Cake, 
   Sparkles, 
   Coffee, 
@@ -22,18 +20,12 @@ export const ServicesSection: React.FC = () => {
       target: '#banquet',
     },
     {
-      id: 'terrace-garden',
-      title: 'Terrace Garden',
-      icon: Trees,
-      description: 'Open-air terrace space elevated above the city for breezy evening gatherings, starlight dinners, and receptions.',
-      target: '#terrace',
-    },
-    {
-      id: 'restaurant',
-      title: 'Restaurant',
+      id: 'terrace-rooftop-restaurant',
+      title: 'The Terrace Garden Rooftop Restaurant',
       icon: Utensils,
-      description: 'Welcoming dining section offering authentic flavors, family dining tables, and continuous 24-hour service.',
-      target: '#restaurant',
+      description: 'Open-air rooftop dining and family restaurant offering multi-cuisine delicacies, starlight ambient views, dine-in seating, and takeaway.',
+      target: '#gallery',
+      actionText: 'Explore Gallery',
     },
     {
       id: 'wedding-functions',
@@ -41,13 +33,6 @@ export const ServicesSection: React.FC = () => {
       icon: HeartHandshake,
       description: 'Comprehensive venue arrangements for marriage ceremonies, sangeet, tilak, engagement, and wedding receptions.',
       target: '#banquet',
-    },
-    {
-      id: 'family-celebrations',
-      title: 'Family Celebrations',
-      icon: Users,
-      description: 'Specialized arrangements for anniversaries, family get-togethers, festive reunions, and intimate banquets.',
-      target: '#book',
     },
     {
       id: 'birthday-parties',
@@ -104,6 +89,15 @@ export const ServicesSection: React.FC = () => {
               <a
                 key={svc.id}
                 href={svc.target}
+                onClick={(e) => {
+                  if (svc.target.startsWith('#')) {
+                    e.preventDefault();
+                    const el = document.querySelector(svc.target);
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                }}
                 className="group relative p-7 rounded-xl bg-white border border-stone-200/80 hover:border-[#D6B56C]/60 transition-all duration-200 hover:shadow-sm flex flex-col justify-between"
               >
                 <div>
@@ -126,7 +120,7 @@ export const ServicesSection: React.FC = () => {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500 font-medium group-hover:text-[#1A1A1A]">
-                  <span>Explore Arrangement</span>
+                  <span>{svc.actionText || (svc.target.startsWith('http') ? 'View Digital Menu' : 'Explore Arrangement')}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </a>

@@ -23,6 +23,7 @@ export interface FestivalEvent {
 }
 
 export type EventType = 
+  | 'Garba Night 4.0'
   | 'Marriage Function'
   | 'Banquet Event'
   | 'Terrace Garden Party'

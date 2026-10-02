@@ -145,13 +145,16 @@ export const RestaurantSection: React.FC = () => {
               <span>Call Restaurant: 099559 86296</span>
             </a>
 
-            <Link
-              to="/menu"
-              className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-ui font-medium rounded-md text-stone-800 bg-[#FAFAF8] hover:bg-white border border-stone-200 transition-colors"
+            <a
+              href="https://sharda-palace-banquet-hall-terrace.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2.5 text-xs font-ui font-bold rounded-md text-[#1e573e] bg-gradient-to-r from-emerald-50 to-amber-50 hover:bg-[#2E7D5A] hover:text-white border border-[#2E7D5A]/40 transition-colors shadow-2xs"
             >
-              <span>Digital Menu Status</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+              <Sparkles className="w-3.5 h-3.5 text-[#D6B56C]" />
+              <span>Open Digital Menu</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
 

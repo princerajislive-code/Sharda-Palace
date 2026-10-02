@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Star, Clock, MessageSquare, Sparkles, Building2, Trees, Utensils, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Star, Clock, MessageSquare, Sparkles, Building2, Trees, Utensils, ShieldCheck } from 'lucide-react';
 import { SHARDA_IMAGES } from '../../data/images';
 
 export const HeroSection: React.FC = () => {
@@ -34,8 +34,19 @@ export const HeroSection: React.FC = () => {
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1A1A1A] leading-[1.08]">
                   SHARDA PALACE
                 </h1>
-                <div className="text-xs sm:text-sm tracking-[0.22em] uppercase font-sans text-stone-500 font-bold">
-                  BANQUET HALL • TERRACE GARDEN • RESTAURANT
+                <div className="text-xs sm:text-sm tracking-[0.15em] sm:tracking-[0.2em] uppercase font-sans text-stone-500 font-bold flex flex-wrap items-center gap-1.5 sm:gap-2">
+                  <span>BANQUET HALL</span>
+                  <span>•</span>
+                  <span>THE TERRACE GARDEN ROOFTOP RESTAURANT</span>
+                  <a
+                    href="https://sharda-palace-banquet-hall-terrace.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold text-[#1e573e] bg-gradient-to-r from-emerald-50 via-emerald-100/70 to-amber-50/70 border border-[#2E7D5A]/40 hover:bg-[#2E7D5A] hover:text-white transition-all shadow-2xs cursor-pointer"
+                  >
+                    <Sparkles className="w-2.5 h-2.5 text-[#D6B56C]" />
+                    <span>DIGITAL MENU ↗</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -51,7 +62,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-3.5">
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <a
                 href="#book"
                 className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-ui font-medium text-white bg-[#1A1A1A] hover:bg-[#2E7D5A] rounded-md transition-all duration-200 shadow-sm hover:shadow-md"
@@ -61,8 +72,21 @@ export const HeroSection: React.FC = () => {
               </a>
 
               <a
+                href="https://sharda-palace-banquet-hall-terrace.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-xs sm:text-sm font-ui font-bold text-[#1e573e] bg-gradient-to-r from-emerald-50 via-emerald-100/80 to-amber-50 border border-[#2E7D5A]/45 hover:bg-[#2E7D5A] hover:text-white rounded-md transition-all duration-200 shadow-xs hover:shadow-md group"
+              >
+                <Sparkles className="w-4 h-4 text-[#D6B56C] group-hover:text-amber-200 shrink-0" />
+                <span className="tracking-wide">
+                  THE TERRACE GARDEN ROOFTOP RESTAURANT Digital Menu
+                </span>
+                <ArrowUpRight className="w-4 h-4 text-[#2E7D5A] group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0" />
+              </a>
+
+              <a
                 href="#experience"
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-ui font-medium text-stone-800 bg-[#FAFAF8] hover:bg-white border border-stone-200 hover:border-stone-300 rounded-md transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-xs sm:text-sm font-ui font-medium text-stone-800 bg-[#FAFAF8] hover:bg-white border border-stone-200 hover:border-stone-300 rounded-md transition-colors"
               >
                 <span>Explore Sharda Palace</span>
               </a>
@@ -136,32 +160,33 @@ export const HeroSection: React.FC = () => {
                       <span>Premises Grandeur</span>
                     </div>
                     <div className="font-serif text-lg sm:text-xl font-bold text-white leading-snug mt-0.5">
-                      Banquet Hall, Terrace Garden & Restaurant
+                      Banquet Hall • Terrace Garden Rooftop Restaurant
                     </div>
                   </div>
                 </div>
 
-                {/* Sub-bar Below Image: 3 Spaces Navigation */}
-                <div className="p-4 bg-white grid grid-cols-3 divide-x divide-stone-100 border-t border-stone-100 text-center text-xs">
-                  <a href="#banquet" className="px-2 py-1 group/link hover:text-[#2E7D5A] transition-colors">
+                {/* Sub-bar Below Image: 2 Spaces Navigation */}
+                <div className="p-4 bg-white grid grid-cols-2 divide-x divide-stone-100 border-t border-stone-100 text-center text-xs">
+                  <a href="#banquet" className="px-3 py-1 group/link hover:text-[#2E7D5A] transition-colors">
                     <div className="font-serif font-bold text-stone-900 group-hover/link:text-[#2E7D5A]">
                       Banquet Hall
                     </div>
-                    <div className="text-[10px] text-stone-400 font-sans mt-0.5">Marriage Functions</div>
+                    <div className="text-[10px] text-stone-400 font-sans mt-0.5">Weddings & Grand Functions</div>
                   </a>
 
-                  <a href="#terrace" className="px-2 py-1 group/link hover:text-[#2E7D5A] transition-colors">
-                    <div className="font-serif font-bold text-stone-900 group-hover/link:text-[#2E7D5A]">
-                      Terrace Garden
+                  <a
+                    href="https://sharda-palace-banquet-hall-terrace.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 group/link hover:text-[#2E7D5A] transition-colors"
+                  >
+                    <div className="font-serif font-bold text-stone-900 group-hover/link:text-[#2E7D5A] flex items-center justify-center gap-1.5">
+                      <span>Terrace Restaurant</span>
+                      <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 bg-[#2E7D5A]/10 text-[#2E7D5A] font-bold rounded">
+                        Digital Menu ↗
+                      </span>
                     </div>
-                    <div className="text-[10px] text-stone-400 font-sans mt-0.5">Open-Air Parties</div>
-                  </a>
-
-                  <a href="#restaurant" className="px-2 py-1 group/link hover:text-[#2E7D5A] transition-colors">
-                    <div className="font-serif font-bold text-stone-900 group-hover/link:text-[#2E7D5A]">
-                      Restaurant
-                    </div>
-                    <div className="text-[10px] text-stone-400 font-sans mt-0.5">Dine-in & Takeaway</div>
+                    <div className="text-[10px] text-stone-400 font-sans mt-0.5">Explore Rooftop Restaurant Digital Menu</div>
                   </a>
                 </div>
               </div>

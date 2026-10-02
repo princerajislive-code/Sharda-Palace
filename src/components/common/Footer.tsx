@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, Clock, MessageSquare, Heart, Shield, ArrowUpRight } from 'lucide-react';
+import { BrandLogo, LogoStyle } from './BrandLogo';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [logoVariant, setLogoVariant] = useState<LogoStyle>(() => {
+    try {
+      return (localStorage.getItem('sharda_logo_variant') as LogoStyle) || 'monogram';
+    } catch {
+      return 'monogram';
+    }
+  });
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      try {
+        const saved = localStorage.getItem('sharda_logo_variant');
+        if (saved) setLogoVariant(saved as LogoStyle);
+      } catch {}
+    };
+    window.addEventListener('sharda-logo-changed', handleUpdate);
+    return () => window.removeEventListener('sharda-logo-changed', handleUpdate);
+  }, []);
 
   return (
     <footer className="bg-[#FAFAF8] border-t border-[#F2F2EF] text-[#1A1A1A] pt-16 pb-12">
@@ -11,16 +30,19 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-200">
           {/* Col 1: Brand */}
           <div className="space-y-4">
-            <div>
-              <span className="font-serif text-2xl font-bold tracking-wider text-[#1A1A1A]">
-                SHARDA PALACE
-              </span>
-              <div className="text-sm font-serif italic text-[#D6B56C] font-semibold mt-0.5">
-                शारदा पैलेस
+            <div className="flex items-start gap-3">
+              <BrandLogo variant={logoVariant} className="w-13 h-13 sm:w-16 sm:h-16 shrink-0 mt-0.5 drop-shadow-sm" />
+              <div>
+                <span className="font-serif text-2xl font-bold tracking-wider text-[#1A1A1A]">
+                  SHARDA PALACE
+                </span>
+                <div className="text-sm font-serif italic text-[#D6B56C] font-semibold mt-0.5">
+                  शारदा पैलेस
+                </div>
+                <p className="text-xs uppercase tracking-[0.2em] text-stone-500 font-medium mt-1">
+                  BANQUET HALL • THE TERRACE GARDEN ROOFTOP RESTAURANT
+                </p>
               </div>
-              <p className="text-xs uppercase tracking-[0.2em] text-stone-500 font-medium mt-1">
-                BANQUET HALL • TERRACE GARDEN • RESTAURANT
-              </p>
             </div>
             <p className="text-xs text-stone-600 leading-relaxed max-w-sm">
               A refined destination in Bhabua for weddings, celebrations, dining, family gatherings, and memorable occasions.
@@ -63,19 +85,16 @@ export const Footer: React.FC = () => {
                 <a href="#banquet" className="hover:text-[#2E7D5A] transition-colors">Banquet Hall</a>
               </li>
               <li>
-                <a href="#terrace" className="hover:text-[#2E7D5A] transition-colors">Terrace Garden</a>
+                <a href="#catering" className="hover:text-[#2E7D5A] transition-colors">Banquet & Catering Menus</a>
+              </li>
+              <li>
+                <a href="https://sharda-palace-banquet-hall-terrace.vercel.app/" target="_self" className="hover:text-[#2E7D5A] transition-colors">The Terrace Garden Rooftop Restaurant</a>
               </li>
               <li>
                 <a href="#gallery" className="hover:text-[#2E7D5A] transition-colors">Photo Gallery</a>
               </li>
               <li>
                 <a href="#reviews" className="hover:text-[#2E7D5A] transition-colors">Guest Reviews</a>
-              </li>
-              <li>
-                <Link to="/menu" className="hover:text-[#2E7D5A] transition-colors inline-flex items-center gap-1">
-                  <span>Digital Menu (Coming Soon)</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#D6B56C]" />
-                </Link>
               </li>
             </ul>
           </div>

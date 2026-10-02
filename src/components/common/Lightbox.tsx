@@ -1,9 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Sparkles } from 'lucide-react';
-import { HospitalityImage } from '../../data/images';
+export interface LightboxItem {
+  id?: string;
+  url?: string;
+  imagePath?: string;
+  title: string;
+  category: string;
+  shortCaption?: string;
+  alt?: string;
+}
 
 interface LightboxProps {
-  photo: HospitalityImage | null;
+  photo: LightboxItem | null;
   currentIndex: number;
   totalCount: number;
   onClose: () => void;
@@ -87,8 +95,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
           <div className="flex items-center gap-3">
             {/* Index count */}
-            <span className="text-xs font-mono text-stone-400">
-              {(currentIndex + 1).toString().padStart(2, '0')} / {totalCount.toString().padStart(2, '0')}
+            <span className="text-xs font-mono font-medium text-stone-500 bg-stone-100 px-2 py-0.5 rounded">
+              Photo {(currentIndex + 1).toString().padStart(2, '0')} of {totalCount.toString().padStart(2, '0')}
             </span>
 
             {/* Zoom toggle */}
@@ -113,10 +121,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
         </div>
 
         {/* Viewport */}
-        <div className="relative w-full min-h-[300px] max-h-[70vh] flex items-center justify-center p-4 sm:p-6 bg-[#FAFAF8] overflow-hidden">
+        <div className="relative w-full min-h-[320px] max-h-[72vh] flex items-center justify-center p-3 sm:p-6 bg-[#FAFAF8] overflow-hidden">
           <img
-            src={photo.url}
-            alt={photo.alt}
+            src={photo.imagePath || photo.url || ''}
+            alt={photo.alt || photo.title}
             className={`max-h-full max-w-full object-contain rounded-lg transition-transform duration-300 shadow-xs ${
               isZoomed ? 'scale-150 cursor-zoom-out' : 'cursor-zoom-in'
             }`}

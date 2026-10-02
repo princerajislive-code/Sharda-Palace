@@ -1,15 +1,165 @@
 import heroBannerImage from '../assets/images/regenerated_image_1790330537372.png';
+import terracePanoramicImage from '../assets/images/regenerated_image_1790915258797.jpg';
+import terraceNightDiningImage from '../assets/images/terrace_night_dining_1790915531763.jpg';
+import experienceTerraceImage from '../assets/images/regenerated_image_1790915639650.jpg';
+import experienceMainImage from '../assets/images/regenerated_image_1790915979353.jpg';
+import banquetHallPrimaryImage from '../assets/images/regenerated_image_1790916661592.jpg';
+import banquetHallSecondaryImage from '../assets/images/regenerated_image_1790916884420.jpg';
+import restaurantDiningRoomImage from '../assets/images/regenerated_image_1790917054090.jpg';
+import restaurantTableSetupImage from '../assets/images/regenerated_image_1790917329916.jpg';
+import banquetSofaSeatingPhoto from '../assets/images/banquet_sofa_seating_1790921784539.jpg';
+import banquetHallStagePhoto from '../assets/images/banquet_hall_stage_1790917834252.jpg';
 
 export interface HospitalityImage {
   id: string;
   url: string;
-  category: 'BANQUET' | 'TERRACE' | 'RESTAURANT' | 'EVENTS';
+  category: string;
+  categories?: string[];
   title: string;
   shortCaption: string;
   alt: string;
   featured?: boolean;
   aspectRatio?: 'landscape' | 'portrait' | 'square' | 'panoramic';
 }
+
+export interface GalleryCategoryDef {
+  id: string;
+  name: string;
+  emoji: string;
+  description: string;
+  bulletPoints: string[];
+}
+
+export const GALLERY_CATEGORIES: GalleryCategoryDef[] = [
+  {
+    id: 'ALL',
+    name: 'All',
+    emoji: '✨',
+    description: 'Every Celebration Has a Story — Explore Ours.',
+    bulletPoints: ['Luxury event destination', 'Grand banquet & terrace', 'Curated memories'],
+  },
+  {
+    id: 'SELFIE_POINTS',
+    name: 'Selfie Points',
+    emoji: '✨',
+    description: 'Stylish selfie/photo spots & Instagram-worthy decorative corners',
+    bulletPoints: [
+      'Stylish selfie/photo spots',
+      'Decorative backgrounds & floral arches',
+      'Couple photo points',
+      'Instagram-worthy corners',
+      'Elegant lighting and décor',
+    ],
+  },
+  {
+    id: 'MARRIAGE_HALL',
+    name: 'Marriage Hall',
+    emoji: '💍',
+    description: 'Grand air-conditioned wedding banquet hall with ceremonial stages',
+    bulletPoints: [
+      'Main marriage hall',
+      'Stage decoration & floral backdrops',
+      'Wedding setups & tilak arrangements',
+      'Seating arrangements & VIP sofas',
+      'Entrance and interior views',
+      'Different wedding themes and decorations',
+    ],
+  },
+  {
+    id: 'ROOMS',
+    name: 'Rooms',
+    emoji: '🛏️',
+    description: 'Serene, clean and comfortable guest accommodations',
+    bulletPoints: [
+      'Room interiors',
+      'Comfortable beds & fresh linen',
+      'Premium room details',
+      'Bathroom/interior details',
+      'Clean and comfortable accommodation views',
+    ],
+  },
+  {
+    id: 'TERRACE_ROOFTOP',
+    name: 'The Terrace Garden Rooftop Restaurant',
+    emoji: '🌿',
+    description: 'Open-air rooftop dining, starlight ambience & panoramic city views',
+    bulletPoints: [
+      'Rooftop restaurant',
+      'Terrace garden setting',
+      'Dining area & family seating',
+      'Evening ambience & cool breeze',
+      'Rooftop views across Bhabua',
+      'Food and dining moments',
+      'Beautiful night lighting',
+    ],
+  },
+  {
+    id: 'FESTIVALS',
+    name: 'Festivals & Celebrations',
+    emoji: '🎉',
+    description: 'Festive decorations, cultural nights and joyful gatherings',
+    bulletPoints: [
+      'Festival decorations',
+      'Special events & galas',
+      'Cultural celebrations',
+      'Festive lighting displays',
+      'Crowd and celebration moments',
+    ],
+  },
+  {
+    id: 'MEHENDI',
+    name: 'Mehendi',
+    emoji: '🌿',
+    description: 'Intimate pre-wedding ceremonies with traditional green floral décor',
+    bulletPoints: [
+      'Mehendi ceremony setups',
+      'Mehendi decoration themes',
+      'Bride and guests seating',
+      'Floral décor & festive ambiance',
+      'Traditional celebration moments',
+    ],
+  },
+  {
+    id: 'HALDI',
+    name: 'Haldi',
+    emoji: '🌼',
+    description: 'Joyous yellow-themed ritual ceremonies with marigold accents',
+    bulletPoints: [
+      'Haldi ceremony mandap',
+      'Yellow-themed décor & marigold florals',
+      'Bride/Groom memorable moments',
+      'Floral decorations & photogenic props',
+      'Family celebration and rituals',
+    ],
+  },
+  {
+    id: 'BIRTHDAY',
+    name: 'Birthday Celebrations',
+    emoji: '🎂',
+    description: 'Milestone birthdays, cake cutting tables and balloon party decor',
+    bulletPoints: [
+      'Birthday decorations',
+      'Cake cutting table stage',
+      'Birthday setups with theme accents',
+      'Balloon and lighting décor',
+      'Family and friends joyous moments',
+    ],
+  },
+  {
+    id: 'VENUE',
+    name: 'Place & Venue',
+    emoji: '📍',
+    description: 'Landmark architecture, entrance facade and venue premises',
+    bulletPoints: [
+      'Exterior building photos',
+      'Main entrance & facade',
+      'Venue surroundings & parking',
+      'Garden/terrace views',
+      'Important venue areas',
+      'Overall property photography',
+    ],
+  },
+];
 
 /**
  * Centralized Hospitality Photography Collection for Sharda Palace.
@@ -56,7 +206,7 @@ export const SHARDA_IMAGES: {
   experience: {
     main: {
       id: 'exp-main',
-      url: 'https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=1400&q=85',
+      url: experienceMainImage,
       category: 'EVENTS',
       title: 'Grand Banquet Architecture & Stage Setup',
       shortCaption: 'Spacious celebration space designed for memorable family gatherings',
@@ -66,11 +216,11 @@ export const SHARDA_IMAGES: {
     },
     accent1: {
       id: 'exp-terrace',
-      url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85',
+      url: experienceTerraceImage,
       category: 'TERRACE',
-      title: 'Open Sky Terrace & Evening Breeze',
-      shortCaption: 'Elevated open-air hospitality for evening parties and gatherings',
-      alt: 'Open air terrace garden setup with ambient string lighting and outdoor seating',
+      title: 'The Terrace Garden Rooftop Restaurant',
+      shortCaption: 'Elevated open-air hospitality for evening parties and starlight dining',
+      alt: 'Open air terrace garden setup with ambient lighting and outdoor seating at Sharda Palace',
       featured: false,
       aspectRatio: 'square',
     },
@@ -90,7 +240,7 @@ export const SHARDA_IMAGES: {
   banquet: {
     primary: {
       id: 'banquet-pri',
-      url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1600&q=85',
+      url: banquetHallPrimaryImage,
       category: 'BANQUET',
       title: 'Ceremonial Elegance & Marriage Hall',
       shortCaption: 'Ideal for marriage functions, tilak, and grand wedding receptions',
@@ -99,7 +249,7 @@ export const SHARDA_IMAGES: {
     },
     secondary: {
       id: 'banquet-sec',
-      url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85',
+      url: banquetHallSecondaryImage,
       category: 'BANQUET',
       title: 'Refined Table Arrangements & Centerpieces',
       shortCaption: 'Attentive details crafted for gracious Indian family hospitality',
@@ -112,21 +262,21 @@ export const SHARDA_IMAGES: {
   terrace: {
     panoramic: {
       id: 'terrace-pano',
-      url: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1800&q=85',
+      url: terracePanoramicImage,
       category: 'TERRACE',
-      title: 'Panoramic Open Sky Terrace',
-      shortCaption: 'Breezy open terrace venue for evening parties and starlight receptions',
-      alt: 'Panoramic terrace garden lounge with evening lighting under open sky',
+      title: 'The Terrace Garden Rooftop Restaurant',
+      shortCaption: 'Breezy open terrace venue for evening parties and starlight dining',
+      alt: 'The Terrace Garden Rooftop Restaurant at Sharda Palace, Bhabua',
       aspectRatio: 'panoramic',
     },
     detail: {
       id: 'terrace-dtl',
-      url: 'https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1000&q=85',
+      url: terraceNightDiningImage,
       category: 'TERRACE',
-      title: 'Terrace Evening Ambience',
-      shortCaption: 'Relaxed celebrations in the calm breeze of Bhabua',
-      alt: 'Festive terrace lighting and lounge chairs in an outdoor garden venue',
-      aspectRatio: 'square',
+      title: 'Night Dining Ambiance',
+      shortCaption: 'Starlight canopy, fairy lights & open-air family dining tables',
+      alt: 'Festive terrace night dining at Sharda Palace, Bhabua',
+      aspectRatio: 'portrait',
     },
   },
 
@@ -134,7 +284,7 @@ export const SHARDA_IMAGES: {
   restaurant: {
     diningRoom: {
       id: 'rest-room',
-      url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=85',
+      url: restaurantDiningRoomImage,
       category: 'RESTAURANT',
       title: 'Warm Family Dining Room',
       shortCaption: 'Dine-in restaurant serving families and guests around the clock',
@@ -143,7 +293,7 @@ export const SHARDA_IMAGES: {
     },
     tableSetup: {
       id: 'rest-table',
-      url: 'https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1000&q=85',
+      url: restaurantTableSetupImage,
       category: 'RESTAURANT',
       title: 'Attentive Table Hospitality',
       shortCaption: 'Clean, comfortable dining prepared for daily meals and private feasts',
@@ -161,95 +311,104 @@ export const SHARDA_IMAGES: {
     },
   },
 
-  // Comprehensive Masonry Gallery Collection
+  // Comprehensive Luxury Masonry Gallery Collection
   gallery: [
     {
-      id: 'gal-b1',
-      url: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85',
-      category: 'BANQUET',
-      title: 'Grand Banquet Celebration Hall',
-      shortCaption: 'Spacious celebration hall prepared for weddings and receptions',
-      alt: 'Illuminated wedding celebration hall with chandeliers and guest tables',
+      id: 'gal-b-lounge',
+      url: banquetSofaSeatingPhoto,
+      category: 'MARRIAGE_HALL',
+      categories: ['MARRIAGE_HALL', 'SELFIE_POINTS'],
+      title: 'Grand Banquet VIP Sofa Lounge & Stage',
+      shortCaption: 'Illuminated filigree ceiling, VIP velvet lounge sofas, and ceremonial stage',
+      alt: 'Grand Banquet Hall with luxury white and maroon sofa seating, reflective marble floor, and decorated stage',
       featured: true,
       aspectRatio: 'landscape',
     },
     {
-      id: 'gal-t1',
-      url: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85',
-      category: 'TERRACE',
-      title: 'Open Sky Terrace Garden',
-      shortCaption: 'Elevated venue for starlight dining and breezy evening parties',
-      alt: 'Wide terrace garden with evening outdoor seating and scenic lighting',
+      id: 'gal-t-pano',
+      url: terracePanoramicImage,
+      category: 'TERRACE_ROOFTOP',
+      categories: ['TERRACE_ROOFTOP', 'SELFIE_POINTS', 'VENUE'],
+      title: 'The Terrace Garden Rooftop Restaurant',
+      shortCaption: 'Breezy open-sky rooftop dining with starlight panoramic city views',
+      alt: 'The Terrace Garden Rooftop Restaurant panoramic view at Sharda Palace, Bhabua',
       featured: true,
       aspectRatio: 'panoramic',
     },
     {
-      id: 'gal-r1',
-      url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85',
-      category: 'RESTAURANT',
-      title: 'Comfortable Family Dining Section',
-      shortCaption: 'Air-conditioned dining area with 24-hour dine-in and takeaway',
-      alt: 'Warm family restaurant interior with tables set for lunch and dinner',
-      featured: false,
-      aspectRatio: 'square',
+      id: 'gal-b-stage',
+      url: banquetHallStagePhoto,
+      category: 'MARRIAGE_HALL',
+      categories: ['MARRIAGE_HALL', 'SELFIE_POINTS'],
+      title: 'Royal Wedding Stage & Floral Backdrop',
+      shortCaption: 'Elevated ceremonial stage with lush floral arch, couple throne couch, and umbrella lighting',
+      alt: 'Decorated wedding stage with floral backdrop and royal throne sofa at Sharda Palace, Bhabua',
+      featured: true,
+      aspectRatio: 'landscape',
     },
     {
-      id: 'gal-e1',
-      url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85',
-      category: 'EVENTS',
-      title: 'Wedding Reception Decor & Stage',
-      shortCaption: 'Royal gold and floral arrangements for auspicious marital rites',
-      alt: 'Celebration table decorated with floral centerpieces and crystal accents',
+      id: 'gal-t-night',
+      url: terraceNightDiningImage,
+      category: 'TERRACE_ROOFTOP',
+      categories: ['TERRACE_ROOFTOP', 'SELFIE_POINTS'],
+      title: 'Starlight Evening Rooftop Ambience',
+      shortCaption: 'Ambient evening dining beneath glowing overhead lanterns and open night canopy',
+      alt: 'The Terrace Garden Rooftop Restaurant at night with ambient lighting at Sharda Palace',
       featured: true,
       aspectRatio: 'portrait',
     },
     {
-      id: 'gal-b2',
-      url: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=85',
-      category: 'BANQUET',
-      title: 'Banquet Hall Ceremony Layout',
-      shortCaption: 'Ample capacity and stage setup for marriage ceremonies and tilak',
-      alt: 'Interior banquet hall decorated for an Indian wedding celebration',
+      id: 'gal-v-facade',
+      url: heroBannerImage,
+      category: 'VENUE',
+      categories: ['VENUE'],
+      title: 'Sharda Palace Landmark Architecture',
+      shortCaption: 'Multi-storey grand venue facade located on Mohania-Bhabua Road',
+      alt: 'Grand exterior building facade of Sharda Palace, Bhabua',
+      featured: true,
+      aspectRatio: 'landscape',
+    },
+    {
+      id: 'gal-t-garden',
+      url: experienceTerraceImage,
+      category: 'TERRACE_ROOFTOP',
+      categories: ['TERRACE_ROOFTOP', 'SELFIE_POINTS'],
+      title: 'Terrace Garden Scenic Photo Corner',
+      shortCaption: 'Charming rooftop garden gazebo setting perfect for family photography and breezy meals',
+      alt: 'Terrace garden open dining area at Sharda Palace',
       featured: false,
       aspectRatio: 'landscape',
     },
     {
-      id: 'gal-t2',
-      url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85',
-      category: 'TERRACE',
-      title: 'Terrace Garden Evening Ambiance',
-      shortCaption: 'Warm lighting and breezy open atmosphere for family gatherings',
-      alt: 'Terrace garden illuminated by string lights at twilight',
+      id: 'gal-b-hallway',
+      url: banquetHallPrimaryImage,
+      category: 'MARRIAGE_HALL',
+      categories: ['MARRIAGE_HALL', 'VENUE'],
+      title: 'Marriage Hall Main Banquet Layout',
+      shortCaption: 'Expansive air-conditioned celebration hall with central aisle and formal ceremony seating',
+      alt: 'Banquet hall interior ceremony layout at Sharda Palace',
       featured: false,
       aspectRatio: 'landscape',
     },
     {
-      id: 'gal-e2',
-      url: 'https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=1000&q=85',
-      category: 'EVENTS',
-      title: 'Family Celebrations & Birthday Parties',
-      shortCaption: 'Special arrangement for anniversaries, milestones, and parties',
-      alt: 'Festive celebration hall with ambient lighting and event setup',
+      id: 'gal-t-table',
+      url: restaurantTableSetupImage,
+      category: 'TERRACE_ROOFTOP',
+      categories: ['TERRACE_ROOFTOP', 'VENUE'],
+      title: 'Refined Table Presentation & Hospitality',
+      shortCaption: 'Impeccable table arrangements, fresh culinary delicacies, and attentive guest service',
+      alt: 'Restaurant and celebration dining table setup at Sharda Palace',
       featured: false,
-      aspectRatio: 'portrait',
+      aspectRatio: 'landscape',
     },
     {
-      id: 'gal-r2',
-      url: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1000&q=85',
-      category: 'RESTAURANT',
-      title: 'Restaurant Table Setup & Hospitality',
-      shortCaption: 'Continuous 24-hour service for travelers and local residents',
-      alt: 'Refined restaurant dining table with cutlery and glassware',
-      featured: false,
-      aspectRatio: 'square',
-    },
-    {
-      id: 'gal-b3',
-      url: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=85',
-      category: 'BANQUET',
-      title: 'Evening Celebration Lighting',
-      shortCaption: 'Festive hospitality and memorable moments in Bhabua',
-      alt: 'Celebration hall with sparkling festive lighting and elegant ambiance',
+      id: 'gal-v-interior',
+      url: experienceMainImage,
+      category: 'VENUE',
+      categories: ['VENUE'],
+      title: 'Comfortable Hospitality & Reception Spaces',
+      shortCaption: 'Welcoming celebration spaces and dedicated areas for wedding party families',
+      alt: 'Hospitality spaces and banquet dining area at Sharda Palace',
       featured: false,
       aspectRatio: 'landscape',
     },

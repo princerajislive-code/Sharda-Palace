@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, Trees, Utensils, Check, Clock, MapPin, Phone } from 'lucide-react';
+import { Building2, Utensils, Check, Clock, MapPin, Phone, ArrowUpRight } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -45,7 +45,7 @@ export const AboutSection: React.FC = () => {
                 <div className="w-5 h-5 rounded-full bg-[#FAFAF8] border border-stone-200 flex items-center justify-center text-[#2E7D5A]">
                   <Check className="w-3 h-3" />
                 </div>
-                <span>Dine-in & Takeaway Restaurant</span>
+                <span>The Terrace Garden Rooftop Restaurant</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <div className="w-5 h-5 rounded-full bg-[#FAFAF8] border border-stone-200 flex items-center justify-center text-[#2E7D5A]">
@@ -71,53 +71,59 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* Right Column: Architectural Pillar Cards */}
-          <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-6 bg-[#FAFAF8] rounded-xl border border-stone-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-[#2E7D5A]">
+          <div className="lg:col-span-6 grid grid-cols-1 gap-4">
+            <div className="p-6 bg-[#FAFAF8] rounded-xl border border-stone-200/80 flex items-start gap-4">
+              <div className="w-11 h-11 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-[#2E7D5A] shrink-0 mt-0.5">
                 <Building2 className="w-5 h-5" />
               </div>
-              <h3 className="font-serif text-lg font-bold text-[#1A1A1A]">
-                Banquet Hall
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Dedicated celebration hall for weddings, reception programs, and family celebrations with stage setup arrangements.
-              </p>
-            </div>
-
-            <div className="p-6 bg-[#FAFAF8] rounded-xl border border-stone-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-[#2E7D5A]">
-                <Trees className="w-5 h-5" />
+              <div className="space-y-1">
+                <h3 className="font-serif text-lg font-bold text-[#1A1A1A]">
+                  Banquet Hall
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Dedicated celebration hall for weddings, reception programs, and family celebrations with stage setup arrangements.
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-bold text-[#1A1A1A]">
-                Terrace Garden
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Open-sky terrace venue providing fresh ambient breeze for evening parties, starlight dining, and social events.
-              </p>
             </div>
 
-            <div className="p-6 bg-[#FAFAF8] rounded-xl border border-stone-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-[#2E7D5A]">
+            <a
+              href="https://sharda-palace-banquet-hall-terrace.vercel.app/"
+              target="_self"
+              className="p-6 bg-[#FAFAF8] hover:bg-white rounded-xl border border-stone-200/80 hover:border-[#2E7D5A]/50 flex items-start gap-4 transition-all duration-200 group shadow-none hover:shadow-sm cursor-pointer"
+            >
+              <div className="w-11 h-11 rounded-lg bg-white group-hover:bg-[#2E7D5A] border border-stone-200 flex items-center justify-center text-[#2E7D5A] group-hover:text-white shrink-0 mt-0.5 transition-colors">
                 <Utensils className="w-5 h-5" />
               </div>
-              <h3 className="font-serif text-lg font-bold text-[#1A1A1A]">
-                Restaurant
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Family dining service offering dine-in seating and takeaway orders for local patrons and visiting guests.
-              </p>
-            </div>
+              <div className="space-y-1 flex-1">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-serif text-lg font-bold text-[#1A1A1A] group-hover:text-[#2E7D5A] transition-colors">
+                    The Terrace Garden Rooftop Restaurant
+                  </h3>
+                  <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover:text-[#2E7D5A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
+                </div>
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Open-air rooftop dining and family restaurant offering multi-cuisine delicacies, starlight ambient views, dine-in seating, and takeaway.
+                </p>
+                <div className="pt-1">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#2E7D5A]">
+                    View Digital Menu &rarr;
+                  </span>
+                </div>
+              </div>
+            </a>
 
-            <div className="p-6 bg-[#FAFAF8] rounded-xl border border-stone-200/80 space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-[#2E7D5A]">
+            <div className="p-6 bg-[#FAFAF8] rounded-xl border border-stone-200/80 flex items-start gap-4">
+              <div className="w-11 h-11 rounded-lg bg-white border border-stone-200 flex items-center justify-center text-[#2E7D5A] shrink-0 mt-0.5">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="font-serif text-lg font-bold text-[#1A1A1A]">
-                Open 24 Hours
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                Round-the-clock availability ensuring continuous support for early morning ceremonies and late evening banquets.
-              </p>
+              <div className="space-y-1">
+                <h3 className="font-serif text-lg font-bold text-[#1A1A1A]">
+                  Open 24 Hours
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Round-the-clock availability ensuring continuous support for early morning ceremonies and late evening banquets.
+                </p>
+              </div>
             </div>
           </div>
         </div>

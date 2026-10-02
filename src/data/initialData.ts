@@ -2,6 +2,21 @@ import { FestivalEvent, ReviewItem, GalleryPhoto, BookingEnquiry } from '../type
 
 export const INITIAL_EVENTS: FestivalEvent[] = [
   {
+    id: 'evt-garba-night-4',
+    name: 'Garba Night 4.0 Dandiya Utsav',
+    hindiName: 'गरबा नाइट ४.० डांडिया रास उत्सव',
+    startDate: '2026-10-17',
+    endDate: '2026-10-18',
+    shortDescription: 'Bhabua’s grandest Dandiya Raas festival at Sharda Palace Banquet & Terrace. Live DJ, dhol beats, prizes & food court.',
+    bannerImage: '/garba_poster.jpg',
+    ctaText: 'Book Garba Passes (₹149/₹249)',
+    ctaLink: '#garba-tickets',
+    active: true,
+    featured: true,
+    category: 'Festival',
+    createdAt: '2026-09-02T10:00:00Z',
+  },
+  {
     id: 'evt-durga-puja-2026',
     name: 'Durga Puja & Navratri Celebrations',
     hindiName: 'दुर्गा पूजा एवं नवरात्रि उत्सव',

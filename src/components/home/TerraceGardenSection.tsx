@@ -14,7 +14,7 @@ export const TerraceGardenSection: React.FC = () => {
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#2E7D5A] font-sans mb-2">
               <Trees className="w-3.5 h-3.5 text-[#D6B56C]" />
-              <span>TERRACE GARDEN</span>
+              <span>THE TERRACE GARDEN ROOFTOP RESTAURANT</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1A1A] leading-tight">
               An Open Sky Sanctuary in Bhabua
