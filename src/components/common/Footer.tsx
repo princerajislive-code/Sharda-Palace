@@ -93,9 +93,6 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="#gallery" className="hover:text-[#2E7D5A] transition-colors">Photo Gallery</a>
               </li>
-              <li>
-                <a href="#reviews" className="hover:text-[#2E7D5A] transition-colors">Guest Reviews</a>
-              </li>
             </ul>
           </div>
 

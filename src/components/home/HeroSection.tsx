@@ -112,9 +112,9 @@ export const HeroSection: React.FC = () => {
                 </div>
                 <span className="font-semibold text-stone-900 font-mono tabular-nums">4.3 ★</span>
                 <span className="text-stone-400">·</span>
-                <a href="#reviews" className="hover:text-[#2E7D5A] underline-offset-4 hover:underline font-medium">
-                  227 Reviews
-                </a>
+                <span className="text-stone-600 font-medium">
+                  227 Google Reviews
+                </span>
               </div>
 
               <div className="flex items-center gap-2">
