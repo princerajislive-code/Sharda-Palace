@@ -7,8 +7,8 @@ interface InstagramLogoProps {
   label?: string;
 }
 
-export const SHARDA_INSTAGRAM_URL = 'https://www.instagram.com/shardapalace/';
-export const SHARDA_INSTAGRAM_HANDLE = '@shardapalace';
+export const SHARDA_INSTAGRAM_URL = 'https://www.instagram.com/sharda_palace_hotel?stkn=eHNnenN6c2hybzYz';
+export const SHARDA_INSTAGRAM_HANDLE = '@sharda_palace_hotel';
 
 export const InstagramLogo: React.FC<InstagramLogoProps> = ({
   className = 'w-5 h-5',
