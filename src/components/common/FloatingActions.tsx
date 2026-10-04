@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
+import { SHARDA_INSTAGRAM_URL } from './InstagramLogo';
 
 export const FloatingActions: React.FC = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -29,6 +30,32 @@ export const FloatingActions: React.FC = () => {
           <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
         </button>
       )}
+
+      {/* Floating Instagram */}
+      <a
+        href={SHARDA_INSTAGRAM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Sharda Palace on Instagram"
+        className="p-3 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white rounded-full shadow-lg hover:scale-110 hover:opacity-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500"
+        title="Follow Sharda Palace on Instagram"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-white"
+        >
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+        </svg>
+      </a>
 
       {/* Floating Call */}
       <a

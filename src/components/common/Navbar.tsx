@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Shield, Phone, ArrowUpRight, Sparkles, Calendar, UtensilsCrossed } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { BrandLogo, LogoStyle } from './BrandLogo';
+import { InstagramLogo, SHARDA_INSTAGRAM_URL, SHARDA_INSTAGRAM_HANDLE } from './InstagramLogo';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -245,6 +246,18 @@ export const Navbar: React.FC = () => {
                 <span>Book Now</span>
               </a>
 
+              {/* Instagram Profile Shortcut */}
+              <a
+                href={SHARDA_INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex items-center justify-center p-1.5 rounded-lg text-stone-600 hover:text-[#bc1888] hover:bg-pink-50/80 border border-stone-200/90 transition-colors"
+                title="Follow Sharda Palace on Instagram"
+                aria-label="Follow Sharda Palace on Instagram"
+              >
+                <InstagramLogo size={16} />
+              </a>
+
               {/* Mobile "Menu" Shortcut pill (visible on < 640px to access digital menu easily) */}
               <a
                 href="https://sharda-palace-banquet-hall-terrace.vercel.app/"
@@ -354,6 +367,24 @@ export const Navbar: React.FC = () => {
 
             {/* Quick Actions & Contact inside Mobile Menu */}
             <div className="pt-3 border-t border-stone-100 space-y-2.5">
+              {/* Instagram Follow Card in Mobile Drawer */}
+              <a
+                href={SHARDA_INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-between p-2.5 rounded-xl bg-gradient-to-r from-purple-50 via-pink-50/70 to-amber-50/70 border border-pink-200/70 text-xs text-stone-800 hover:border-pink-300 transition-colors shadow-2xs"
+                title="Follow Sharda Palace on Instagram"
+              >
+                <div className="flex items-center gap-2.5">
+                  <InstagramLogo size={16} className="shrink-0" />
+                  <span className="font-medium text-stone-800">
+                    Follow <strong className="text-pink-700">{SHARDA_INSTAGRAM_HANDLE}</strong> on Instagram
+                  </span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-pink-600 shrink-0" />
+              </a>
+
               <a
                 href="#book"
                 onClick={(e) => {

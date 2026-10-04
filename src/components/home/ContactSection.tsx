@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, MessageSquare, Navigation, Clock, ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { InstagramLogo, SHARDA_INSTAGRAM_URL, SHARDA_INSTAGRAM_HANDLE } from '../common/InstagramLogo';
 
 export const ContactSection: React.FC = () => {
   return (
@@ -97,6 +98,30 @@ export const ContactSection: React.FC = () => {
               >
                 <Navigation className="w-4 h-4 text-[#D6B56C]" />
                 <span>Get Directions</span>
+              </a>
+
+              <a
+                href={SHARDA_INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-ui font-medium rounded-md text-white bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] hover:opacity-90 transition-opacity shadow-sm"
+                title="Follow Sharda Palace on Instagram"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+                <span>Instagram</span>
               </a>
             </div>
           </div>

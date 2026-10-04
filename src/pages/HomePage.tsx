@@ -15,6 +15,7 @@ import { BanquetSection } from '../components/home/BanquetSection';
 import { BanquetCateringSection } from '../components/home/BanquetCateringSection';
 import { TerraceGardenSection } from '../components/home/TerraceGardenSection';
 import { RestaurantSection } from '../components/home/RestaurantSection';
+import { RoomsSection } from '../components/home/RoomsSection';
 import { GallerySection } from '../components/home/GallerySection';
 import { BookingSection } from '../components/home/BookingSection';
 import { ContactSection } from '../components/home/ContactSection';
@@ -46,6 +47,7 @@ export const HomePage: React.FC = () => {
         <BanquetCateringSection />
         <TerraceGardenSection />
         <RestaurantSection />
+        <RoomsSection />
         <GallerySection />
         <BookingSection />
         <ContactSection />

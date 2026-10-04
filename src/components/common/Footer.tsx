@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, Clock, MessageSquare, Heart, Shield, ArrowUpRight } from 'lucide-react';
 import { BrandLogo, LogoStyle } from './BrandLogo';
+import { InstagramLogo, SHARDA_INSTAGRAM_URL, SHARDA_INSTAGRAM_HANDLE } from './InstagramLogo';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -57,6 +58,19 @@ export const Footer: React.FC = () => {
                 <Clock className="w-3.5 h-3.5 text-[#2E7D5A]" />
                 <span className="text-[#2E7D5A] font-medium">Open 24 Hours</span>
               </div>
+            </div>
+
+            <div className="pt-1">
+              <a
+                href={SHARDA_INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-stone-700 bg-white border border-stone-200/90 shadow-2xs hover:border-pink-300 hover:text-[#bc1888] transition-colors"
+                title="Follow Sharda Palace on Instagram"
+              >
+                <InstagramLogo size={14} className="shrink-0" />
+                <span>Follow {SHARDA_INSTAGRAM_HANDLE}</span>
+              </a>
             </div>
           </div>
 
@@ -121,6 +135,17 @@ export const Footer: React.FC = () => {
                   className="hover:text-[#2E7D5A] font-medium"
                 >
                   WhatsApp: +91 99559 86296
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <InstagramLogo size={16} className="shrink-0" />
+                <a
+                  href={SHARDA_INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#bc1888] font-medium transition-colors"
+                >
+                  Instagram: {SHARDA_INSTAGRAM_HANDLE}
                 </a>
               </div>
               <div className="pt-2">
