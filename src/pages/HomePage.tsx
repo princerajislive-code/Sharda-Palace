@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar } from '../components/common/Navbar';
-import { AnnouncementBanner } from '../components/common/AnnouncementBanner';
 import { Footer } from '../components/common/Footer';
 import { FloatingActions } from '../components/common/FloatingActions';
 
@@ -21,7 +20,6 @@ import { ContactSection } from '../components/home/ContactSection';
 export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#1A1A1A]">
-      <AnnouncementBanner />
       <Navbar />
 
       <main className="flex-1">
