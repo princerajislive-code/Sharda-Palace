@@ -96,10 +96,18 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  interface NavItem {
+    label: string;
+    href: string;
+    badge?: string;
+    isSpecial?: boolean;
+    tagline?: string;
+  }
+
   // Preserving all existing navigation links
-  const navLinks = [
+  const navLinks: NavItem[] = [
     { label: 'Home', href: '/' },
-    { label: 'Garba Night 4.0', href: '#garba', badge: '17-18 Oct' },
+    { label: 'Rooms & Stay', href: '#rooms' },
     { label: 'About', href: '#about' },
     { label: 'Banquet', href: '#banquet' },
     { label: 'Catering', href: '#catering' },

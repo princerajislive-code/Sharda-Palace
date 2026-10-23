@@ -1,6 +1,4 @@
 import React from 'react';
-import { TopAdBanner } from '../components/garba/TopAdBanner';
-import { GarbaNightSection } from '../components/garba/GarbaNightSection';
 import { Navbar } from '../components/common/Navbar';
 import { AnnouncementBanner } from '../components/common/AnnouncementBanner';
 import { Footer } from '../components/common/Footer';
@@ -23,21 +21,10 @@ import { ContactSection } from '../components/home/ContactSection';
 export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFFFF] text-[#1A1A1A]">
-      {/* 1. Small Advertisement Banner at the top */}
-      <TopAdBanner />
       <AnnouncementBanner />
       <Navbar />
 
       <main className="flex-1">
-        {/* Garba Night 4.0 Section with exact requested order:
-            2. Garba Night 4.0 Main Poster
-            3. Event Dates: 17 & 18 October 2026
-            4. Ticket Booking: ₹149 (1 Day) / ₹249 (2 Days)
-            5. Booking Form
-            6. WhatsApp Booking Button
-        */}
-        <GarbaNightSection />
-
         <HeroSection />
         <ExperienceSection />
         <FestivalsSection />
